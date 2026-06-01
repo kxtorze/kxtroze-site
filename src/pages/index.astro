@@ -1,0 +1,345 @@
+﻿---
+import "../styles/global.css";
+
+const navItems = [
+  ["About", "#about"],
+  ["NEUROPUNK", "#neuropunk"],
+  ["Live", "#live"],
+  ["Releases", "#releases"],
+  ["Services", "#services"],
+  ["Media", "#media"],
+  ["Contact", "#contact"]
+];
+
+const releases = [
+  {
+    title: "Yes Or No",
+    year: "2025",
+    cover: "assets/cover-yes-or-no.jpg",
+    url: "https://open.spotify.com/album/067fw7mDWQjj3DD7nCoze1"
+  },
+  {
+    title: "Cycleroll",
+    year: "2025",
+    cover: "assets/cover-cycleroll.jpg",
+    url: "https://open.spotify.com/album/5am3igQAr8qeVPqIPEmS7m"
+  },
+  {
+    title: "Лилия",
+    year: "2019",
+    cover: "assets/cover-lilia.jpg",
+    url: "https://open.spotify.com/album/6CCkPPcnsqvIcN1cdb0A5Q"
+  },
+  {
+    title: "При луне",
+    year: "2020",
+    cover: "assets/cover-pri-lune.jpg",
+    url: "https://open.spotify.com/album/0Lwl3mVgvz67hfUnV1TF89"
+  },
+  {
+    title: "Улетим",
+    year: "2020",
+    cover: "assets/cover-uletim.jpg",
+    url: "https://open.spotify.com/album/2xuMqyITJIzQFQ6pPVRGjj"
+  }
+];
+
+const neuropunkPhotos = [
+  ["assets/neuropunk/neuropunk-01.jpg", "wide", "kxtroze performing at NEUROPUNK Samara"],
+  ["assets/neuropunk/neuropunk-02.jpg", "", "kxtroze DJ set at NEUROPUNK"],
+  ["assets/neuropunk/neuropunk-03.jpg", "wide", "NEUROPUNK stage with KXTORZE logo"],
+  ["assets/neuropunk/neuropunk-04.jpg", "", "kxtroze close-up at NEUROPUNK"],
+  ["assets/neuropunk/neuropunk-05.jpg", "wide", "NEUROPUNK Samara crowd and logo"],
+  ["assets/neuropunk/neuropunk-06.jpg", "", "kxtroze festival moment"]
+];
+
+const livePhotos = [
+  ["assets/events/club-02.jpg", "tall", "kxtroze DJ set in a red club room"],
+  ["assets/events/club-01.jpg", "", "kxtroze mixing in headphones"],
+  ["assets/events/club-07.jpg", "wide", "kxtroze working at the booth with other artists"],
+  ["assets/events/club-03.jpg", "", "Pioneer DJ deck in red light"],
+  ["assets/events/club-06.jpg", "", "kxtroze close-up at the mixer"],
+  ["assets/events/club-09.jpg", "", "close portrait of kxtroze at the decks"],
+  ["assets/events/club-04.jpg", "", "kxtroze focused at the controller"],
+  ["assets/events/club-05.jpg", "tall", "kxtroze playing in a leopard shirt"],
+  ["assets/events/club-08.jpg", "wide", "kxtroze booth with logo projection"]
+];
+
+const services = [
+  ["01", "Production", "Full track production from idea to final arrangement."],
+  ["02", "Mixing", "Modern, detailed mixes with depth, width, and impact."],
+  ["03", "Mastering", "Polished masters ready for streaming and release delivery."],
+  ["04", "Songwriting", "Hooks, toplines, lyric direction, and melodic development."],
+  ["05", "Sound Design", "Custom synth palettes, sonic logos, textures, and atmospheres."]
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Official website for kxtroze, Drum & Bass artist, DJ, and producer."
+    />
+    <meta property="og:title" content="kxtroze | Drum & Bass Artist" />
+    <meta
+      property="og:description"
+      content="Drum and Bass production, DJ sets, NEUROPUNK Samara, DNB INSIDE, and release archive."
+    />
+    <meta property="og:image" content="assets/neuropunk/neuropunk-01.jpg" />
+    <meta name="theme-color" content="#050608" />
+    <title>kxtroze | Drum & Bass Artist & Producer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <canvas class="noise-canvas" data-noise aria-hidden="true"></canvas>
+    <div class="cursor-glow" data-cursor aria-hidden="true"></div>
+    <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
+
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="kxtroze home">
+        <img class="brand-logo" src="assets/kxtorze-logo.png" alt="kxtroze logo" />
+        <span>kxtroze</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" data-nav>
+        {navItems.map(([label, href]) => <a href={href}>{label}</a>)}
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title" data-hero>
+        <div class="hero-bg" aria-hidden="true" data-depth="0.08"></div>
+        <div class="hero-gridline" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow" data-reveal>Drum & Bass Artist / DJ / Producer</p>
+          <h1 id="hero-title" data-glitch="kxtroze" data-reveal>kxtroze</h1>
+          <p class="hero-copy" data-reveal>
+            Drum and Bass production, DJ sets, and heavy bass music shaped with
+            UK Bass influence, Russian roots, and a personal sonic vision.
+          </p>
+          <div class="hero-actions" data-reveal>
+            <a class="button primary magnetic" href="#releases">Listen to Music</a>
+            <a class="button ghost magnetic" href="#contact">Contact</a>
+          </div>
+        </div>
+        <div class="hero-stage" data-reveal aria-label="KXTORZE visual identity">
+          <figure class="comic-panel panel-main" data-tilt>
+            <img src="assets/neuropunk/neuropunk-01.jpg" alt="kxtroze performing at NEUROPUNK Samara" />
+            <figcaption>NEUROPUNK / SAMARA</figcaption>
+          </figure>
+          <figure class="comic-panel panel-side" data-tilt>
+            <img src="assets/events/club-05.jpg" alt="kxtroze DJ set in red club light" />
+          </figure>
+          <figure class="comic-panel panel-cut" data-tilt>
+            <img src="assets/neuropunk/neuropunk-03.jpg" alt="KXTORZE visuals on stage" />
+          </figure>
+          <div class="ink-stamp">DNB / 174 BPM</div>
+        </div>
+        <div class="hero-stats" aria-label="Artist highlights" data-reveal>
+          <div>
+            <strong>Artist</strong>
+            <span>original music</span>
+          </div>
+          <div>
+            <strong>Producer</strong>
+            <span>beats & records</span>
+          </div>
+          <div>
+            <strong>2005</strong>
+            <span>active since</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section about" id="about" aria-labelledby="about-title">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">About</p>
+          <h2 id="about-title">Bass with vision.</h2>
+        </div>
+        <div class="about-grid">
+          <p data-reveal>
+            Kxtorze is a Drum and Bass artist and DJ from Russia. Active since
+            2005, he was previously part of Gustov Fam and Beskar & Raidu.
+          </p>
+          <p data-reveal>
+            Now focused on DnB production and DJing, he is a resident at DNB
+            INSIDE events and the creator of "Cycleroll", crafting heavy,
+            honest bass music with his own direction.
+          </p>
+        </div>
+      </section>
+
+      <section class="section festival" id="neuropunk" aria-labelledby="neuropunk-title">
+        <div class="section-heading split" data-reveal>
+          <div>
+            <p class="eyebrow">Festival</p>
+            <h2 id="neuropunk-title">NEUROPUNK Samara</h2>
+          </div>
+          <p class="section-note">The main Russian DRUM&BASS rave NEUROPUNK in Samara.</p>
+        </div>
+        <div class="festival-feature">
+          <video
+            src="assets/neuropunk/neuropunk-samara.mp4"
+            poster="assets/neuropunk/neuropunk-03.jpg"
+            controls
+            playsinline
+            preload="metadata"
+            data-reveal
+          ></video>
+          <div class="festival-copy" data-reveal>
+            <p class="eyebrow">Main DnB rave</p>
+            <h3>NEUROPUNK made history.</h3>
+            <p>
+              On March 21, Signal sounded louder than ever. Thank you to
+              everyone who was there with us.
+            </p>
+          </div>
+        </div>
+        <div class="festival-grid" aria-label="NEUROPUNK Samara photos">
+          {
+            neuropunkPhotos.map(([src, modifier, alt]) => (
+              <button class={`gallery-tile ${modifier}`} type="button" data-lightbox={src} data-tilt aria-label={`Open photo: ${alt}`}>
+                <img src={src} alt={alt} loading="lazy" />
+              </button>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="section live" id="live" aria-labelledby="live-title">
+        <div class="section-heading split" data-reveal>
+          <div>
+            <p class="eyebrow">Live Photos</p>
+            <h2 id="live-title">DNB INSIDE IN XBAT</h2>
+          </div>
+          <p class="section-note">Club booth, red light, raw DnB pressure.</p>
+        </div>
+        <div class="live-grid">
+          {
+            livePhotos.map(([src, modifier, alt]) => (
+              <button class={`live-card ${modifier}`} type="button" data-lightbox={src} data-tilt aria-label={`Open photo: ${alt}`}>
+                <img src={src} alt={alt} loading="lazy" />
+              </button>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="section" id="releases" aria-labelledby="releases-title">
+        <div class="section-heading split" data-reveal>
+          <div>
+            <p class="eyebrow">Releases</p>
+            <h2 id="releases-title">Latest releases</h2>
+          </div>
+          <a class="text-link" href="https://open.spotify.com/artist/3CEyAlNhHFw4L5dMn965Km?si=9Sw_yzGtRBuOiELw-WRNRQ">Open Spotify</a>
+        </div>
+        <div class="release-grid">
+          {
+            releases.map((release) => (
+              <article class="release-card" data-reveal data-tilt>
+                <img src={release.cover} alt={`${release.title} single artwork`} loading="lazy" />
+                <div>
+                  <p>Single / {release.year}</p>
+                  <h3>{release.title}</h3>
+                  <a href={release.url} aria-label={`Listen to ${release.title}`}>Listen</a>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="section services" id="services" aria-labelledby="services-title">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Services</p>
+          <h2 id="services-title">Production for artists, labels, and visual stories.</h2>
+        </div>
+        <div class="service-grid">
+          {
+            services.map(([number, title, text]) => (
+              <article data-reveal data-tilt>
+                <span>{number}</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="section media" id="media" aria-labelledby="media-title">
+        <div class="section-heading split" data-reveal>
+          <div>
+            <p class="eyebrow">Video / Media</p>
+            <h2 id="media-title">Visual world</h2>
+          </div>
+          <p class="section-note">Clips, sessions, and cinematic live visuals.</p>
+        </div>
+        <div class="video-grid">
+          <article class="video-card local-video" data-reveal data-tilt>
+            <video
+              src="assets/neuropunk/neuropunk-samara.mp4"
+              poster="assets/neuropunk/neuropunk-03.jpg"
+              controls
+              playsinline
+              preload="metadata"
+            ></video>
+            <div>
+              <p>Festival Video</p>
+              <h3>NEUROPUNK Samara</h3>
+            </div>
+          </article>
+          <article class="video-card media-poster" data-reveal data-tilt>
+            <img src="assets/neuropunk/neuropunk-05.jpg" alt="NEUROPUNK festival crowd" loading="lazy" />
+            <div>
+              <p>Photo archive</p>
+              <h3>NEUROPUNK frame</h3>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact" aria-labelledby="contact-title">
+        <div class="contact-inner" data-reveal>
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2 id="contact-title">Bookings, production, sync, and collaborations.</h2>
+          </div>
+          <div class="contact-links">
+            <a href="https://t.me/kxtorze">Telegram @kxtorze</a>
+            <a href="mailto:i@kxtorze.ru">i@kxtorze.ru</a>
+            <a href="https://instagram.com/kxtorze">Instagram @kxtorze</a>
+            <a href="https://open.spotify.com/artist/3CEyAlNhHFw4L5dMn965Km?si=9Sw_yzGtRBuOiELw-WRNRQ">Spotify</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>kxtroze</span>
+      <span>Artist, producer, songwriter.</span>
+    </footer>
+
+    <div class="lightbox" data-lightbox-modal aria-hidden="true">
+      <button class="lightbox-close" type="button" data-lightbox-close aria-label="Close image"></button>
+      <img src="" alt="" data-lightbox-image />
+    </div>
+
+    <script>
+      import "../scripts/main.js";
+    </script>
+  </body>
+</html>
